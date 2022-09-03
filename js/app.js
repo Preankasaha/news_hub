@@ -14,7 +14,7 @@ const loadCategories = async () => {
 
 
 const displayCategories = newsCategories => {
-    console.log(newsCategories);
+    // console.log(newsCategories);
     const menu = document.getElementById('all-menu');
     const home = document.getElementById('home');
     newsCategories.forEach(newsCategory => {
@@ -28,7 +28,7 @@ const displayCategories = newsCategories => {
 
     });
 }
-loadCategories();
+
 // news of each category loaded
 const loadEachNewsCategories = async (id) => {
     toggleSpinner(true);
@@ -46,7 +46,7 @@ const loadEachNewsCategories = async (id) => {
 
 const displayEachNewsCategories = eachNewsCategories => {
     toggleSpinner(false);
-    console.log(eachNewsCategories);
+    // console.log(eachNewsCategories);
     const categoryDetails = document.getElementById('news-categories-detail');
     categoryDetails.textContent = '';
 
@@ -55,7 +55,7 @@ const displayEachNewsCategories = eachNewsCategories => {
     message.textContent = '';
 
     message.innerHTML = `
-        <h2 class = "text-2xl text-black-500 text-center">${eachNewsCategories.length ? eachNewsCategories.length + ' ' + 'Items Found' : 'No Itews Found'}</h2>
+        <h2 class = "text-2xl text-black-500 text-center">${eachNewsCategories.length ? eachNewsCategories.length + ' ' + 'Items Found' : 'No Itews Found'} in This Category</h2>
         `
     // sort by total view added
     eachNewsCategories.sort((a, b) => b.total_view - a.total_view);
@@ -67,32 +67,41 @@ const displayEachNewsCategories = eachNewsCategories => {
         const categoryDiv = document.createElement('div');
         categoryDiv.classList.add('card');
 
-        const { title, details, author, image_url, thumbnail_url, rating, total_view } = eachNewsCategory;
+        const { title, details, author, image_url, thumbnail_url, total_view } = eachNewsCategory;
         categoryDiv.innerHTML = `
-        <figure>
-        <img src="${thumbnail_url}" class="w-1/2" alt="Movie">
+
+        <div class="lg:h-96 my-8 card lg:card-side bg-base-100 shadow-xl hover:shadow-indigo-900/50">
+        <figure><img class="w-96 h-full p-5" src="${thumbnail_url}" class="w-96 h-full" alt="Movie">
         </figure>
         <div class="card-body">
-            <h2 class="card-title">${title}</h2>
-            <p>${details.length > 255 ? details.slice(0, 255) + '...' : details}</p>
-            <div class="avatar">
-            <div class="w-24 rounded-full"><img src="${author.img}" /></div></div>
-
-            <p>${author.name ? author.name : 'no-info-found'} </br>
-            ${author.published_date ? author.published_date : 'no-info-found'} <span class ="mx-4">${total_view ? total_view : 'no-info-found'}</span> <span class ="mx-4">${rating.number}</span> </p>
-            
-            <!-- The button to open modal -->
-           <div>
-            <label for="my-modal-3" onclick = "loadNewsDetails('${eachNewsCategory._id}')" class="btn modal-button">Details</label>
-            </div>
+        <h2 class="card-title lg:text-3xl mb-5">${title}</h2>
+        <p class="text-justify lg:text-lg mb-3">${details.length > 90 ? details.slice(0, 98) : details}</p>
+        <p class="text-justify lg:text-lg">${details.length > 150 ? details.slice(98, 255) + '...' : details}</p>
+        <div class="flex gap-4 mt-5 justify-between items-center">
+        <div class="flex items-center gap-4">
+        <div class="avatar">
+        <div class="w-11 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+        <img src="${author.img}" />
+        </div>
+        </div>
+        <div>
+        <h1>${author.name ? author.name : 'No author found'}</h1> </br>
+        <p> ${author.published_date ? author.published_date : 'No publishing date found'}<p> 
+        </div>
+        </div>
+        <div class="flex gap-4 items-center">
+        <i class="fa-regular fa-eye"></i>
+        <p>${total_view ? total_view : 'No view found'}</p> 
+        </div>
+        <!-- The button to open modal -->
+        <div class="card-actions justify-end">
+        <label for="my-modal-3" onclick = "loadNewsDetails('${eachNewsCategory._id}')" class="btn modal-button">Details</label>
+        </div>
 
         `
-
         categoryDetails.appendChild(categoryDiv);
 
-
     })
-
 
 }
 
@@ -111,8 +120,8 @@ const loadNewsDetails = async (id) => {
 }
 
 const displayNewsDetail = newsDetails => {
+    // console.log(newsDetails);
 
-    console.log(newsDetails);
     newsDetails.forEach(newsDetail => {
         // console.log(newsDetail);
 
@@ -126,12 +135,11 @@ const displayNewsDetail = newsDetails => {
                 <p class="py-4">${details}</p>
                 <div class="avatar">
                 <div class="w-24 rounded-full"><img src="${author.img}" /></div></div>
-                <p>${author.name ? author.name : 'no-info-found'} 
+                <p>${author.name ? author.name : 'No author found'} 
                 </br>
-                ${author.published_date ? author.published_date : 'no-info-found'} 
-                <span class ="mx-4">${total_view ? total_view : 'no-info-found'}</span> 
+                ${author.published_date ? author.published_date : 'No date found'} 
+                <span class ="mx-4">${total_view ? total_view : 'No view found'}</span> 
                 <span class ="mx-4">${rating.number}</span> </p>
-
         `
     });
 
@@ -154,3 +162,4 @@ const displayBlogPage = () => {
 }
 
 
+loadCategories();

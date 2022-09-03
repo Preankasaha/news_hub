@@ -15,87 +15,87 @@
 <body>
     <header>
         <!-- navber starts -->
-        <section class="container mx-auto">
-            <div class="navbar bg-base-100">
-                <div class="navbar-start">
+        <header>
+            <!-- navber starts -->
+            <section class="container mx-auto flex justify-between">
+                <div class="navbar navbar-start bg-base-100">
                     <a class="btn btn-ghost normal-case text-xl">News Hub</a>
                 </div>
-                <div class="navbar-end hidden lg:flex">
-                    <ul class="menu menu-horizontal p-0">
-                        <li><a>News</a></li>
-
-                    </ul>
-                </div>
-                <div class="navbar-start">
-                    <div class="dropdown">
-                        <label tabindex="0" class="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4 6h16M4 12h8m-8 6h16" />
-                            </svg>
-                        </label>
-                        <ul tabindex="0"
-                            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                <div class="flex">
+                    <div class="navbar-end">
+                        <ul class="menu menu-horizontal p-0">
                             <li><a>News</a></li>
-
                         </ul>
                     </div>
                     <div>
                         <button onclick="displayBlogPage()" class="btn">Blog</button>
                     </div>
                 </div>
-            </div>
-
+            </section>
 
             <!-- navbar end -->
             <!-- menu -->
-            <div class="flex Flex 1 justify-center flex-wrap my-4">
-                <ul id="all-menu" class="menu menu-horizontal bg-base-100 rounded-box">
-                    <li><a id="home"></a></li>
+            <section>
+                <div class="gap-1 my-4">
+                    <ul id="all-menu"
+                        class="text-center menu menu-horizontal bg-base-100 rounded-box grid lg:grid-cols-9 justify-items-center sm:grid grid-cols-2 sm:gap-10 text-lg font-bold">
+                        <li><a id="home"></a></li>
 
-                </ul>
-            </div>
+                    </ul>
+                </div>
+            </section>
 
 
             <!-- menu end-->
-        </section>
-    </header>
-    <main>
-        <!-- spinner loaded -->
-        <section>
-            <progress id="spinner" class="progress hidden w-full"></progress>
-        </section>
 
-        <!-- no of items found -->
-        <section>
-            <div id="message">
+        </header>
+        <main class="container mx-auto">
+            <!-- spinner loaded -->
+            <section>
+                <progress id="spinner" class="progress hidden w-full"></progress>
+            </section>
 
-            </div>
-        </section>
-
-        <!-- card -->
-        <section class="card-side bg-base-100 shadow-xl w-3/4 mx-auto">
-            <div id="news-categories-detail">
-
-
-
-            </div>
-        </section>
-
-        <!-- card end -->
-        <!-- modal starts -->
-        <input type="checkbox" id="my-modal-3" class="modal-toggle" />
-        <div class="modal">
-            <div class="modal-box relative">
-                <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                <div id="modal-body">
+            <!-- no of items found -->
+            <section>
+                <div id="message">
 
                 </div>
+            </section>
 
+            <!-- card -->
+            <!-- <div class="card card-side lg:card-side lg:h-96 my-8  bg-base-100 shadow-xl ">
+                <figure><img src="https://placeimg.com/200/280/arch" alt="Movie"></figure>
+                <div class="card-body">
+                    <h2 class="card-title">New movie is released!</h2>
+                    <p>Click the button to watch on Jetflix app.</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary">Watch</button>
+                    </div>
+                </div>
+            </div> -->
+
+            <section class="card-side bg-base-100 shadow-xl card lg:card-side bg-base-100 shadow-xl">
+                <div id="news-categories-detail">
+
+
+
+
+                </div>
+            </section>
+
+            <!-- card end -->
+            <!-- modal starts -->
+            <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+            <div class="modal">
+                <div class="modal-box relative">
+                    <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <div id="modal-body">
+
+                    </div>
+
+                </div>
             </div>
-        </div>
-    </main>
+        </main>
 </body>
 <script src="js/app.js"></script>
 
