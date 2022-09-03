@@ -22,7 +22,7 @@
             <div class="navbar-end hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">
                     <li><a>News</a></li>
-                    <li><a>Blog</a></li>
+
                 </ul>
             </div>
             <div class="navbar-start">
@@ -37,8 +37,11 @@
                     <ul tabindex="0"
                         class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><a>News</a></li>
-                        <li><a>Blog</a></li>
+
                     </ul>
+                </div>
+                <div>
+                    <button id="blog-btn" class="btn">Blog</button>
                 </div>
             </div>
         </div>
@@ -56,6 +59,10 @@
         <!-- menu end-->
     </header>
     <main>
+        <!-- spinner loaded -->
+        <section>
+            <progress id="spinner" class="progress hidden w-full"></progress>
+        </section>
 
         <!-- no of items found -->
         <section>

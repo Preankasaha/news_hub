@@ -11,7 +11,7 @@ const loadCategories = async () => {
     }
 }
 
-loadCategories();
+
 
 const displayCategories = newsCategories => {
     console.log(newsCategories);
@@ -28,10 +28,10 @@ const displayCategories = newsCategories => {
 
     });
 }
-
+loadCategories('${category_name}');
 // news of each category loaded
 const loadEachNewsCategories = async (id) => {
-
+    toggleSpinner(true);
     const url = `https://openapi.programming-hero.com/api/news/category/${id}`
     try {
         const response = await fetch(url)
@@ -45,7 +45,7 @@ const loadEachNewsCategories = async (id) => {
 }
 
 const displayEachNewsCategories = eachNewsCategories => {
-
+    toggleSpinner(false);
     console.log(eachNewsCategories);
     const categoryDetails = document.getElementById('news-categories-detail');
     categoryDetails.textContent = '';
@@ -57,10 +57,12 @@ const displayEachNewsCategories = eachNewsCategories => {
     message.innerHTML = `
         <h2 class = "text-2xl text-black-500 text-center">${eachNewsCategories.length ? eachNewsCategories.length + ' ' + 'Items Found' : 'No Itews Found'}</h2>
         `
+    eachNewsCategories.sort((a, b) => b.total_view - a.total_view);
     // news of each categories displayed
 
     eachNewsCategories.forEach(eachNewsCategory => {
         // console.log(eachNewsCategory);
+
         const categoryDiv = document.createElement('div');
         categoryDiv.classList.add('card');
 
@@ -94,6 +96,7 @@ const displayEachNewsCategories = eachNewsCategories => {
 }
 
 const loadNewsDetails = async (id) => {
+
     const url = `https://openapi.programming-hero.com/api/news/${id}`
     try {
         const response = await fetch(url)
@@ -107,6 +110,7 @@ const loadNewsDetails = async (id) => {
 }
 
 const displayNewsDetail = newsDetails => {
+
     console.log(newsDetails);
     newsDetails.forEach(newsDetail => {
         // console.log(newsDetail);
@@ -132,4 +136,18 @@ const displayNewsDetail = newsDetails => {
 
 
 }
+
+// arrow function for spinner 
+const toggleSpinner = isLoading => {
+    const spinner = document.getElementById('spinner');
+    if (isLoading) {
+        spinner.classList.remove('hidden');
+    }
+    else {
+        spinner.classList.add('hidden');
+    }
+}
+
+
+
 
