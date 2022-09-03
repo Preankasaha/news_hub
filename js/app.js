@@ -57,6 +57,7 @@ const displayEachNewsCategories = eachNewsCategories => {
     message.innerHTML = `
         <h2 class = "text-2xl text-black-500 text-center">${eachNewsCategories.length ? eachNewsCategories.length + ' ' + 'Items Found' : 'No Itews Found'}</h2>
         `
+    // sort by total view added
     eachNewsCategories.sort((a, b) => b.total_view - a.total_view);
     // news of each categories displayed
 
