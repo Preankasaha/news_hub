@@ -15,48 +15,51 @@
 <body>
     <header>
         <!-- navber starts -->
-        <div class="navbar bg-base-100">
-            <div class="navbar-start">
-                <a class="btn btn-ghost normal-case text-xl">News Hub</a>
-            </div>
-            <div class="navbar-end hidden lg:flex">
-                <ul class="menu menu-horizontal p-0">
-                    <li><a>News</a></li>
-
-                </ul>
-            </div>
-            <div class="navbar-start">
-                <div class="dropdown">
-                    <label tabindex="0" class="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h8m-8 6h16" />
-                        </svg>
-                    </label>
-                    <ul tabindex="0"
-                        class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+        <section class="container mx-auto">
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <a class="btn btn-ghost normal-case text-xl">News Hub</a>
+                </div>
+                <div class="navbar-end hidden lg:flex">
+                    <ul class="menu menu-horizontal p-0">
                         <li><a>News</a></li>
 
                     </ul>
                 </div>
-                <div>
-                    <button id="blog-btn" onclick="displayBlogPage()" class="btn">Blog</button>
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <label tabindex="0" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </label>
+                        <ul tabindex="0"
+                            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a>News</a></li>
+
+                        </ul>
+                    </div>
+                    <div>
+                        <button onclick="displayBlogPage()" class="btn">Blog</button>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <!-- navbar end -->
-        <!-- menu -->
-        <div class="flex md:flex-col">
-            <ul id="all-menu" class="menu menu-horizontal bg-base-100 rounded-box">
-                <li><a id="home"></a></li>
-
-            </ul>
-        </div>
 
 
-        <!-- menu end-->
+            <!-- navbar end -->
+            <!-- menu -->
+            <div class="flex Flex 1 justify-center flex-wrap my-4">
+                <ul id="all-menu" class="menu menu-horizontal bg-base-100 rounded-box">
+                    <li><a id="home"></a></li>
+
+                </ul>
+            </div>
+
+
+            <!-- menu end-->
+        </section>
     </header>
     <main>
         <!-- spinner loaded -->
@@ -75,7 +78,7 @@
         <section class="card-side bg-base-100 shadow-xl w-3/4 mx-auto">
             <div id="news-categories-detail">
 
-                
+
 
             </div>
         </section>
@@ -87,7 +90,7 @@
             <div class="modal-box relative">
                 <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                 <div id="modal-body">
-                    
+
                 </div>
 
             </div>

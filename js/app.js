@@ -28,7 +28,7 @@ const displayCategories = newsCategories => {
 
     });
 }
-loadCategories('${category_name}');
+loadCategories();
 // news of each category loaded
 const loadEachNewsCategories = async (id) => {
     toggleSpinner(true);
@@ -148,6 +148,9 @@ const toggleSpinner = isLoading => {
     }
 }
 
-
+// event handler to blog-btn 
+const displayBlogPage = () => {
+    window.location.href = "index2.html";
+}
 
 
