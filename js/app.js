@@ -11,15 +11,12 @@ const loadCategories = async () => {
     }
 }
 
-
-
 const displayCategories = newsCategories => {
     // console.log(newsCategories);
     const menu = document.getElementById('all-menu');
-    const home = document.getElementById('home');
     newsCategories.forEach(newsCategory => {
         const listItems = document.createElement('li');
-        home.innerText = 'Home';
+
         const { category_id, category_name } = newsCategory;
         listItems.innerHTML = `
         <a onclick = "loadEachNewsCategories('${category_id}')">${category_name}</a>`
@@ -74,7 +71,7 @@ const displayEachNewsCategories = eachNewsCategories => {
         <figure><img class="w-96 h-full p-5" src="${thumbnail_url}" class="w-96 h-full" alt="Movie">
         </figure>
         <div class="card-body">
-        <h2 class="card-title lg:text-3xl mb-5">${title}</h2>
+        <h2 class="card-title lg:text-3xl font-bolder mb-5">${title}</h2>
         <p class="text-justify lg:text-lg mb-3">${details.length > 90 ? details.slice(0, 98) : details}</p>
         <p class="text-justify lg:text-lg">${details.length > 150 ? details.slice(98, 255) + '...' : details}</p>
         <div class="flex gap-4 mt-5 justify-between items-center">
@@ -95,7 +92,7 @@ const displayEachNewsCategories = eachNewsCategories => {
         </div>
         <!-- The button to open modal -->
         <div class="card-actions justify-end">
-        <label for="my-modal-3" onclick = "loadNewsDetails('${eachNewsCategory._id}')" class="btn modal-button">Details</label>
+        <label for="my-modal-3" onclick = "loadNewsDetails('${eachNewsCategory._id}')" class="btn btn-outline btn-primary modal-button">Details</label>
         </div>
 
         `

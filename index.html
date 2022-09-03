@@ -19,15 +19,16 @@
             <!-- navber starts -->
             <section class="container mx-auto flex justify-between">
                 <div class="navbar navbar-start bg-base-100">
-                    <a class="btn btn-ghost normal-case text-xl">News Hub</a>
+                    <a class="btn btn-ghost normal-case text-xl font-bold">News Hub</a>
                 </div>
                 <div class="flex">
-                    <div class="navbar-end">
-                        <ul class="menu menu-horizontal p-0">
+                    <div>
+                        <ul class="menu menu-horizontal p-0 navbar-center">
+                            <li><a>Home</a></li>
                             <li><a>News</a></li>
                         </ul>
                     </div>
-                    <div>
+                    <div class="navbar-end">
                         <button onclick="displayBlogPage()" class="btn">Blog</button>
                     </div>
                 </div>
@@ -36,19 +37,19 @@
             <!-- navbar end -->
             <!-- menu -->
             <section>
-                <div class="gap-1 my-4">
+                <div class="gap-1 my-8">
                     <ul id="all-menu"
-                        class="text-center menu menu-horizontal bg-base-100 rounded-box grid lg:grid-cols-9 justify-items-center sm:grid grid-cols-2 sm:gap-10 text-lg font-bold">
-                        <li><a id="home"></a></li>
+                        class="text-center menu menu-horizontal bg-base-100 rounded-box grid lg:grid-cols-8 justify-items-center sm:grid grid-cols-2 sm:gap-10 text-lg font-bold">
+
 
                     </ul>
                 </div>
             </section>
 
-
             <!-- menu end-->
 
         </header>
+
         <main class="container mx-auto">
             <!-- spinner loaded -->
             <section>
@@ -56,23 +57,13 @@
             </section>
 
             <!-- no of items found -->
-            <section>
+            <section class="my-3 font-bold uppercase">
                 <div id="message">
 
                 </div>
             </section>
 
-            <!-- card -->
-            <!-- <div class="card card-side lg:card-side lg:h-96 my-8  bg-base-100 shadow-xl ">
-                <figure><img src="https://placeimg.com/200/280/arch" alt="Movie"></figure>
-                <div class="card-body">
-                    <h2 class="card-title">New movie is released!</h2>
-                    <p>Click the button to watch on Jetflix app.</p>
-                    <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Watch</button>
-                    </div>
-                </div>
-            </div> -->
+            <!-- card starts-->
 
             <section class="card-side bg-base-100 shadow-xl card lg:card-side bg-base-100 shadow-xl">
                 <div id="news-categories-detail">
@@ -92,7 +83,6 @@
                     <div id="modal-body">
 
                     </div>
-
                 </div>
             </div>
         </main>
