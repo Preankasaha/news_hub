@@ -1,4 +1,4 @@
-// category loaded
+// categories loaded
 const loadCategories = async () => {
     const url = `https://openapi.programming-hero.com/api/news/categories`
     try {
@@ -11,15 +11,20 @@ const loadCategories = async () => {
     }
 }
 
+
+
+// categories dispalyed
 const displayCategories = newsCategories => {
-    // console.log(newsCategories);
+
     const menu = document.getElementById('all-menu');
+
     newsCategories.forEach(newsCategory => {
         const listItems = document.createElement('li');
 
         const { category_id, category_name } = newsCategory;
         listItems.innerHTML = `
-        <a onclick = "loadEachNewsCategories('${category_id}')">${category_name}</a>`
+        <a onclick = "loadEachNewsCategories('${category_id}')">${category_name}</a>
+        `
 
         menu.appendChild(listItems);
 
@@ -28,7 +33,9 @@ const displayCategories = newsCategories => {
 
 // news of each category loaded
 const loadEachNewsCategories = async (id) => {
+    // spinner loaded
     toggleSpinner(true);
+
     const url = `https://openapi.programming-hero.com/api/news/category/${id}`
     try {
         const response = await fetch(url)
@@ -41,9 +48,12 @@ const loadEachNewsCategories = async (id) => {
     }
 }
 
+// news of each category displayed
 const displayEachNewsCategories = eachNewsCategories => {
+
+    // spinner off
     toggleSpinner(false);
-    // console.log(eachNewsCategories);
+
     const categoryDetails = document.getElementById('news-categories-detail');
     categoryDetails.textContent = '';
 
@@ -56,10 +66,10 @@ const displayEachNewsCategories = eachNewsCategories => {
         `
     // sort by total view added
     eachNewsCategories.sort((a, b) => b.total_view - a.total_view);
+
     // news of each categories displayed
 
     eachNewsCategories.forEach(eachNewsCategory => {
-        // console.log(eachNewsCategory);
 
         const categoryDiv = document.createElement('div');
         categoryDiv.classList.add('card');
@@ -86,8 +96,7 @@ const displayEachNewsCategories = eachNewsCategories => {
         <p> ${author.published_date ? author.published_date : 'No publishing date found'}<p> 
         </div>
         </div>
-        <div class="flex gap-4 items-center">
-        <i class="fa-regular fa-eye"></i>
+        <div class="items-center">
         <p>${total_view ? total_view : 'No view found'}</p> 
         </div>
         <!-- The button to open modal -->
@@ -99,9 +108,10 @@ const displayEachNewsCategories = eachNewsCategories => {
         categoryDetails.appendChild(categoryDiv);
 
     })
-
 }
 
+
+// detail news loaded 
 const loadNewsDetails = async (id) => {
 
     const url = `https://openapi.programming-hero.com/api/news/${id}`
@@ -116,11 +126,11 @@ const loadNewsDetails = async (id) => {
     }
 }
 
+// detail news displayed
 const displayNewsDetail = newsDetails => {
-    // console.log(newsDetails);
+
 
     newsDetails.forEach(newsDetail => {
-        // console.log(newsDetail);
 
         // details of news added on modal
         const newsDetailsModal = document.getElementById('modal-body');
@@ -153,10 +163,11 @@ const toggleSpinner = isLoading => {
     }
 }
 
-// event handler to blog-btn 
+// function to add event handler to blog-btn 
 const displayBlogPage = () => {
     window.location.href = "index2.html";
 }
 
 
 loadCategories();
+loadEachNewsCategories('01');
