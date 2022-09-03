@@ -6,36 +6,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News_hub</title>
-
+    <!-- tailwind css -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 
 <body>
     <header>
         <!-- navber starts -->
         <div class="navbar bg-base-100">
-            <div class="flex-1">
+            <div class="navbar-start">
                 <a class="btn btn-ghost normal-case text-xl">News Hub</a>
             </div>
-            <div class="flex-none">
+            <div class="navbar-end hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">
                     <li><a>News</a></li>
                     <li><a>Blog</a></li>
                 </ul>
             </div>
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <label tabindex="0" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </label>
+                    <ul tabindex="0"
+                        class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a>News</a></li>
+                        <li><a>Blog</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
+
         <!-- navbar end -->
         <!-- menu -->
-        <ul id="all-menu" class="menu menu-horizontal bg-base-100 rounded-box">
-            <li><a loadEachNewsCategories()>Home</a></li>
+        <div class="flex md:flex-col">
+            <ul id="all-menu" class="menu menu-horizontal bg-base-100 rounded-box">
+                <li><a id="home"></a></li>
 
-        </ul>
+            </ul>
+        </div>
+
+
         <!-- menu end-->
     </header>
     <main>
+
+
         <!-- card -->
-        <section class="card-side bg-base-100 shadow-xl">
+        <section class="card-side bg-base-100 shadow-xl w-1/2">
             <div id="news-categories-detail">
 
                 <!-- <div class="card ">
@@ -45,7 +69,22 @@
 
             </div>
         </section>
+
         <!-- card end -->
+        <!-- modal starts -->
+        <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+        <div class="modal">
+            <div class="modal-box relative">
+                <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                <div id="modal-body">
+                    <!-- <h3 class="text-lg font-bold">Congratulations random Internet user!</h3>
+                    <p class="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia
+                        for
+                        free!</p> -->
+                </div>
+
+            </div>
+        </div>
     </main>
 </body>
 <script src="js/app.js"></script>
