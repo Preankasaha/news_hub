@@ -20,9 +20,9 @@ const displayCategories = newsCategories => {
     newsCategories.forEach(newsCategory => {
         const listItems = document.createElement('li');
         home.innerText = 'Home';
-        // const { category_id, category_name } = newsCategory;
+        const { category_id, category_name } = newsCategory;
         listItems.innerHTML = `
-        <a onclick = "loadEachNewsCategories('${newsCategory.category_id}')">${newsCategory.category_name}</a>`
+        <a onclick = "loadEachNewsCategories('${category_id}')">${category_name}</a>`
 
         menu.appendChild(listItems);
 
@@ -49,7 +49,15 @@ const displayEachNewsCategories = eachNewsCategories => {
     console.log(eachNewsCategories);
     const categoryDetails = document.getElementById('news-categories-detail');
     categoryDetails.textContent = '';
-    console.log(eachNewsCategories.length);
+
+    // Number of items found
+    const message = document.getElementById('message');
+    message.textContent = '';
+
+    message.innerHTML = `
+        <h2 class = "text-2xl text-black-500 text-center">${eachNewsCategories.length ? eachNewsCategories.length + ' ' + 'Items Found' : 'No Itews Found'}</h2>
+        `
+    // news of each categories displayed
 
     eachNewsCategories.forEach(eachNewsCategory => {
         // console.log(eachNewsCategory);
@@ -69,13 +77,16 @@ const displayEachNewsCategories = eachNewsCategories => {
 
             <p>${author.name ? author.name : 'no-info-found'} </br>
             ${author.published_date ? author.published_date : 'no-info-found'} <span class ="mx-4">${total_view ? total_view : 'no-info-found'}</span> <span class ="mx-4">${rating.number}</span> </p>
+            
             <!-- The button to open modal -->
            <div>
             <label for="my-modal-3" onclick = "loadNewsDetails('${eachNewsCategory._id}')" class="btn modal-button">Details</label>
             </div>
 
         `
+
         categoryDetails.appendChild(categoryDiv);
+
 
     })
 
@@ -98,7 +109,9 @@ const loadNewsDetails = async (id) => {
 const displayNewsDetail = newsDetails => {
     console.log(newsDetails);
     newsDetails.forEach(newsDetail => {
-        console.log(newsDetail);
+        // console.log(newsDetail);
+
+        // details of news added on modal
         const newsDetailsModal = document.getElementById('modal-body');
         newsDetailsModal.textContent = '';
         const { title, details, image_url, img, author, total_view, rating } = newsDetail;
