@@ -31,7 +31,7 @@ const displayCategories = newsCategories => {
 
 // news of each category loaded
 const loadEachNewsCategories = async (id) => {
-   
+
     const url = `https://openapi.programming-hero.com/api/news/category/${id}`
     try {
         const response = await fetch(url)
@@ -45,12 +45,12 @@ const loadEachNewsCategories = async (id) => {
 }
 
 const displayEachNewsCategories = eachNewsCategories => {
-    
+
     console.log(eachNewsCategories);
     const categoryDetails = document.getElementById('news-categories-detail');
     categoryDetails.textContent = '';
     console.log(eachNewsCategories.length);
-    
+
     eachNewsCategories.forEach(eachNewsCategory => {
         // console.log(eachNewsCategory);
         const categoryDiv = document.createElement('div');
@@ -76,7 +76,7 @@ const displayEachNewsCategories = eachNewsCategories => {
 
         `
         categoryDetails.appendChild(categoryDiv);
-      
+
     })
 
 
@@ -106,25 +106,17 @@ const displayNewsDetail = newsDetails => {
                 <img src ="${image_url}"/>
                 <h3 class="py-4">${title}</h3>
                 <p class="py-4">${details}</p>
-                <p></p>
+                <div class="avatar">
+                <div class="w-24 rounded-full"><img src="${author.img}" /></div></div>
+                <p>${author.name ? author.name : 'no-info-found'} 
+                </br>
+                ${author.published_date ? author.published_date : 'no-info-found'} 
+                <span class ="mx-4">${total_view ? total_view : 'no-info-found'}</span> 
+                <span class ="mx-4">${rating.number}</span> </p>
 
         `
     });
 
 
 }
-const toggleSpinner = isLoading => {
-    const spinner = document.getElementById('spinner');
-    if (isLoading) {
-        spinner.classList.remove('hidden');
-    }
-    else {
-        spinner.classList.add('hidden');
-    }
-}
-// const displayMessage = () => {
-//     const message = document.getElementById('message');
-//     message.innerHTML = `
-//     <h2>
-//     `
-// }
+
