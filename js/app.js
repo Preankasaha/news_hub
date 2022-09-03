@@ -135,7 +135,6 @@ const displayNewsDetail = newsDetails => {
         `
     });
 
-
 }
 
 // arrow function for spinner 

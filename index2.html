@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <!-- tailwind css -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+        <div class="collapse-title text-xl font-medium">
+            Q-1. what are the differences between regular functions and arrow functions?
+        </div>
+        <div class="collapse-content">
+            <p>Ans. Arrow functions – a new feature introduced in ES6 – enable writing concise functions in JavaScript.
+                While
+                both regular and arrow functions work in a similar manner, yet there are certain interesting differences
+                between them. Regular functions created using function declarations or expressions are ‘constructible’
+                and
+                ‘callable’. Since regular functions are constructible, they can be called using the ‘new’ keyword.
+                However,
+                the arrow functions are only ‘callable’ and not constructible. Thus, we will get a run-time error on
+                trying
+                to construct a non-constructible arrow functions using the new keyword.</p>
+        </div>
+    </div>
+
+    <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+        <div class="collapse-title text-xl font-medium">
+            Q-2: what are the differences between map(), forEach(), filter() and find() methods in JavaScript?
+        </div>
+        <div class="collapse-content">
+            <p>Ans. .map() executes the same code on every element in an array and returns a new array with the updated
+                elements.
+                </br>
+                .forEach(), is used to execute the same code on every element in an array but does not change the array
+                and
+                it returns undefined.
+                </br>
+                .filter() checks every element in an array to see if it meets a certain criteria and returns a new array
+                with the elements that return truthy for the criteria.
+                </br>
+                .find() is also a search function like the previous but they differ in one small detail — this function
+                returns only one match in an array.
+            </p>
+        </div>
+    </div>
+
+    <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+        <div class="collapse-title text-xl font-medium">
+            Q-3: Why do we use template string in JavaScript?
+        </div>
+        <div class="collapse-content">
+            <p>Ans. Template strings are a powerful feature of modern JavaScript released in ES6. It lets us
+                insert/interpolate
+                variables and expressions into strings without needing to concatenate like in older versions of
+                JavaScript.
+                It allows us to create strings that are complex and contain dynamic elements. Another great thing that
+                comes
+                with template strings are tags. Tags are functions that take a string and the decomposed parts of the
+                string
+                as parameters and are great for converting strings to different entities.</p>
+        </div>
+    </div>
+</body>
+
+</html>
