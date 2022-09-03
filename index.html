@@ -13,82 +13,88 @@
 </head>
 
 <body>
-    <header>
+    <header class="container">
         <!-- navber starts -->
-        <header>
-            <!-- navber starts -->
-            <section class="container mx-auto flex justify-between">
-                <div class="navbar navbar-start bg-base-100">
-                    <a class="btn btn-ghost normal-case text-xl font-bold">News Hub</a>
-                </div>
-                <div class="flex">
-                    <div>
-                        <ul class="menu menu-horizontal p-0 navbar-center">
-                            <li><a>Home</a></li>
-                            <li><a>News</a></li>
-                        </ul>
-                    </div>
-                    <div class="navbar-end">
-                        <button onclick="displayBlogPage()" class="btn btn-primary">Blog</button>
-                    </div>
-                </div>
-            </section>
-            <!-- navbar end -->
-            
-            <!-- menu -->
-            <section>
-                <div class="gap-1 my-8">
-                    <ul id="all-menu"
-                        class="text-center menu menu-horizontal bg-base-100 rounded-box grid lg:grid-cols-8 justify-items-center sm:grid grid-cols-2 sm:gap-10 text-lg font-bold">
-
-
+        <!-- navber starts -->
+        <section class="container mx-auto flex justify-between">
+            <div class="navbar navbar-start bg-base-100">
+                <a class="btn btn-ghost normal-case text-xl font-bold">News Hub</a>
+            </div>
+            <div class="flex">
+                <div>
+                    <ul class="menu menu-horizontal p-0 navbar-center">
+                        <li><a>Home</a></li>
+                        <li><a>News</a></li>
                     </ul>
                 </div>
-            </section>
-            <!-- menu end-->
-        </header>
-
-        <main class="container mx-auto">
-            <!-- spinner loaded -->
-            <section class="my-3">
-                <progress id="spinner" class="progress hidden w-full"></progress>
-            </section>
-
-            <!-- no of items found -->
-            <section class="my-5 p-2 text-white font-bold bg-violet-800 mx-auto rounded uppercase">
-                <div id="message">
-
-                </div>
-            </section>
-
-            <!-- card starts-->
-            <section class="card-side bg-base-100 shadow-xl card lg:card-side bg-base-100 shadow-xl">
-                <div id="news-categories-detail">
-
-                </div>
-            </section>
-            <!-- card end -->
-
-            <!-- modal starts -->
-            <input type="checkbox" id="my-modal-3" class="modal-toggle" />
-            <div class="modal">
-                <div class="modal-box relative">
-                    <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <div id="modal-body">
-
-                    </div>
+                <div class="navbar-end">
+                    <button onclick="displayBlogPage()" class="btn btn-primary">Blog</button>
                 </div>
             </div>
-        </main>
-        <!-- footer starts -->
-        <footer class="btm-nav">
-            <hr>
-            <h3>Copyright 2021 News Portal</h3>
+        </section>
 
-        </footer>
+        <!-- navbar end -->
+        <!-- menu -->
+        <section>
+            <div class="gap-1 my-8">
+                <ul id="all-menu"
+                    class="text-center menu menu-horizontal bg-base-100 rounded-box grid lg:grid-cols-8 justify-items-center sm:grid grid-cols-2 sm:gap-10 text-lg font-bold">
+
+
+                </ul>
+            </div>
+        </section>
+
+        <!-- menu end-->
+
+    </header>
+
+    <main class="container mx-auto">
+        <!-- spinner loaded -->
+        <section>
+            <progress id="spinner" class="progress hidden w-full"></progress>
+        </section>
+
+        <!-- no of items found -->
+
+        <section class="my-3 bg-violet-800 text-white font-semibold uppercase">
+            <div id="message">
+
+            </div>
+        </section>
+
+        <!-- card starts-->
+
+        <section class="card-side bg-base-100 shadow-xl card lg:card-side bg-base-100 shadow-xl">
+            <div id="news-categories-detail">
+
+
+
+
+            </div>
+        </section>
+
+        <!-- card end -->
+
+        <!-- modal starts -->
+        <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+        <div class="modal">
+            <div class="modal-box relative">
+                <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                <div id="modal-body">
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- footer added -->
+    <footer class="container btm-nav mt-3">
+        <hr>
+        <span>Copyright 2021 News Portal</span>
+
+    </footer>
 
 </body>
-<!-- js file -->
 <script src="js/app.js"></script>
 
 </html>

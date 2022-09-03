@@ -11,8 +11,6 @@ const loadCategories = async () => {
     }
 }
 
-
-
 // categories dispalyed
 const displayCategories = newsCategories => {
 
