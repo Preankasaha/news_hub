@@ -75,7 +75,7 @@ const displayEachNewsCategories = eachNewsCategories => {
         const { title, details, author, image_url, thumbnail_url, total_view } = eachNewsCategory;
         categoryDiv.innerHTML = `
 
-        <div class="lg:h-96 my-8 card lg:card-side bg-base-100 shadow-xl hover:shadow-indigo-900/50">
+        <div class="lg:h-96 my-8 card lg:card-side bg-base-100 shadow-xl hover:shadow-gray-400/50">
         <figure><img class="w-96 h-full p-5" src="${thumbnail_url}" class="w-96 h-full" alt="Movie">
         </figure>
         <div class="card-body">
