@@ -49,8 +49,7 @@ const loadEachNewsCategories = async (id) => {
 // news of each category displayed
 const displayEachNewsCategories = eachNewsCategories => {
 
-    // spinner off
-    toggleSpinner(false);
+
 
     const categoryDetails = document.getElementById('news-categories-detail');
     categoryDetails.textContent = '';
@@ -104,7 +103,8 @@ const displayEachNewsCategories = eachNewsCategories => {
 
         `
         categoryDetails.appendChild(categoryDiv);
-
+        // spinner off
+        toggleSpinner(false);
     })
 }
 
