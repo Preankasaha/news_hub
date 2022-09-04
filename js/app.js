@@ -168,4 +168,4 @@ const displayBlogPage = () => {
 
 
 loadCategories();
-loadEachNewsCategories('01');
+loadEachNewsCategories('08');
